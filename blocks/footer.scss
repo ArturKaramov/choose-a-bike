@@ -1,0 +1,129 @@
+.footer {
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding: 80px 0 60px 0;
+  padding-left: calc((100% - 1280px) / 2);
+  padding-right: calc((100% - 1280px) / 2);
+  background-color: $color-light-footer;
+  display: grid;
+  gap: 100px 0;
+  grid-template-columns: minmax(min-content, 360px) min-content;
+  grid-template-rows: repeat(2, max-content);
+  justify-content: space-between;
+  grid-template-areas: "form  none"
+                      "copyright switcher";
+  @media screen and (max-width: 1320px) {
+    padding: 80px 18px 60px 18px;
+  }
+  @include mobile {
+    padding: 60px 18px 16px 18px;
+    justify-content: space-between;
+    align-content: space-between;
+    grid-template-areas: "form form"
+                        "copyright logo";
+  }
+  &_mode_dark {
+    background-color: $color-dark-footer;
+  }
+  &__label {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: inherit;
+    max-width: 229px;
+  }
+  &__form {
+    padding: 0;
+    margin: 0;
+    grid-area: form;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    position: relative;
+  }
+  &__input-email {
+    font-family: $font-inter;
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: 500;
+    box-sizing: border-box;
+    max-width: 360px;
+    width: 100%;
+    height: 50px;
+    padding: 11px 20px;
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid rgba(199, 199, 199, 0.5);
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    @include formPlaceholder($color-dark-grey, 0.7);
+    &:hover {
+      @include formPlaceholder($color-black, 1);
+    }
+    &_mode_dark {
+      @include formPlaceholder($color-white, 0.7);
+      &:hover {
+        @include formPlaceholder($color-white, 1);
+      }
+    }
+    &:focus {
+      border: 1px solid #C7C7C7;
+      background-color: transparent;
+      @include formPlaceholder(transparent, 1);
+      ~.footer__button {
+        display: block;
+      }
+    }
+  }
+  &__button {
+    padding: 0;
+    margin: 0;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 28px;
+    text-align: right;
+    color: $color-black;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 11px;
+    right: 22px;
+    cursor: pointer;
+    display: none;
+    &:hover {
+      display: block;
+    }
+    &_mode_dark {
+      color: $color-white;
+    }
+  }
+  &__copyright {
+    margin: 0;
+    padding: 0;
+    grid-area: copyright;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #CFCFCF;
+    &_mode_dark {
+      color: #565656;
+    }
+  }
+  &__logo {
+    grid-area: logo;
+    align-self: end;
+    justify-self: end;
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+}

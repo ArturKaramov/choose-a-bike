@@ -1,0 +1,25 @@
+@mixin mobile {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+
+@mixin formPlaceholder($color, $opacity){
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &::placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+}
