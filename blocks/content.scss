@@ -1,0 +1,13 @@
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: calc(100% - 1320px);
+  margin-top: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  @media screen and (max-width: 1320px) {
+    padding: 0 18px;
+  }
+}

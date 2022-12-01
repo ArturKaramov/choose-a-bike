@@ -1,0 +1,15 @@
+.page {
+  box-sizing: border-box;
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-inter;
+  background-color: $color-light-background;
+  color: $color-black;
+  &_mode_dark {
+    background-color: $color-dark-background;
+    color: $color-white;
+  }
+}

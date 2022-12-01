@@ -1,0 +1,65 @@
+.covers {
+  width: 100%;
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, max-content);
+  gap: 50px;
+  grid-template-areas: "title"
+                      "subtitle"
+                      "photos"
+                      "buttons";
+  @include mobile {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+    gap: 40px;
+    grid-template-areas: "title buttons"
+                        "photos photos"
+                        "subtitle subtitle";
+    padding: 80px 0 40px 0;
+    align-items: center;
+  }
+  &__photos {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-area: photos;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+  &__image {
+    max-width: 650px;
+    width: 690px;
+    padding-right: 40px;
+    transition: visibility .4s, opacity .4s linear;
+    @include mobile {
+      padding-right: 18px;
+      width: calc(100vw - 36px);
+    }
+  }
+  &__buttons {
+    grid-area: buttons;
+    display: flex;
+    gap: 20px;
+    @include mobile {
+      justify-self: end;
+      gap: 10px;
+    }
+  }
+  &__flag {
+    grid-area: photos;
+    z-index: 1;
+    align-self: end;
+    margin-bottom: 16px;
+    @include mobile {
+      width: 70px;
+    }
+  }
+}
