@@ -483,10 +483,11 @@ template {
 .header {
   background-color: inherit;
   width: 100%;
+  max-width: 1440px;
   box-sizing: border-box;
   margin: 0;
   padding: 28px 0;
-  padding-right: calc(100% - 1320px);
+  padding-right: 120px;
   position: fixed;
   z-index: 2;
   display: flex;
@@ -495,8 +496,6 @@ template {
 @media (max-width: 1320px) {
   .header {
     padding: 28px 18px;
-    justify-items: flex-end;
-    position: fixed;
   }
 }
 @media screen and (max-width: 500px) {
@@ -934,7 +933,7 @@ template {
     background-size: contain;
   }
 }
-.button_direction_right {
+.button_move_next {
   transform: rotate(180deg);
 }
 
