@@ -12,6 +12,7 @@ const sunFooter = footer.querySelector('[data-js="sun"]');
 let moonLogo = "./images/moon-dark.svg";
 let sunLogo = "./images/sun-dark.svg";
 let logo = "./images/logo-dark.svg";
+let select = "./images/select-dark.svg";
 
 const clickSwitcher = () => {
   switchers.forEach((switcher) => {
@@ -31,9 +32,11 @@ function switchMode() {
   footerCopyright.classList.toggle('footer__copyright_mode_dark');
   document.querySelector(".eddy-merckx__about").classList.toggle('eddy-merckx__about_mode_dark');
   subtitleList.forEach((n) => (n.classList.toggle('section__subtitle_mode_dark')));
+  options.classList.toggle('bikes__options_mode_dark');
   bikesList.forEach((n) => (n.classList.toggle('bikes__option_mode_dark')));
   menuButton.classList.toggle('header__menu_mode_dark');
   menuCloseButton.classList.toggle('header__menu_close_mode_dark');
+  selectButton.classList.toggle('bikes__select-image_mode_dark');
   [footerLogo.src, logo] = [logo, footerLogo.src];
   [sunHeader.src, sunFooter.src, sunLogo] = [sunLogo, sunLogo, sunHeader.src];
   [moonHeader.src, moonFooter.src, moonLogo] = [moonLogo, moonLogo, moonHeader.src];

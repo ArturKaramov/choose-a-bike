@@ -5,46 +5,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Выбери свой велосипед</title>
+  <link rel="icon" href="./images/logo.svg">
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="page">
   <header class="header">
     <button class="header__menu"></button>
-    <button class="header__menu_close block_display_none"></button>
+    <button class="header__menu header__menu_close block block_display_none"></button>
     <nav class="header__links">
       <a href="#covers" class="header__link">Покрытия и градиенты</a>
       <a href="#bikes" class="header__link">Велосипеды</a>
       <a href="#trainings" class="header__link">Тренировки</a>
     </nav>
-    <div class="switcher block_screen_mobile block_display_none">
-      <img src="./images/sun.svg" alt="sun-logo" data-js="sun">
+    <div class="switcher block block_screen_mobile block_display_none">
+      <img src="./images/sun.svg" alt="солнце" data-js="sun">
       <button class="switcher__button switcher__button_mode_light"></button>
-      <img src="./images/moon.svg" alt="moon-logo" data-js="moon">
+      <img src="./images/moon.svg" alt="луна" data-js="moon">
     </div>
   </header>
   <main class="content">
-    <section class="intro">
-      <h1 class="section__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
+    <section class="intro section">
+      <h1 class="intro__title section__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
       <img src="./images/intro-forest.jpg" class="intro__image" alt="Дорога в лесу">
       <p class="section__subtitle">Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным
         маршрутам&nbsp;&mdash; нужно только определиться с&nbsp;выбором велосипеда и&nbsp;отправиться в&nbsp;путь.</p>
-      <button class="intro__button">Подробнее</button>
+      <a class="intro__button">Подробнее</a>
       <p class="intro__bike-name">Cannondale Systemsix</p>
       <img src="./images/bike-fix.png" class="intro__bike-fix" alt="Велосипед">
     </section>
-    <div class="eddy-merckx section">
+    <section class="eddy-merckx section">
       <img src="./images/eddy-nature.jpg" class="section__image" alt="Домик на склоне">
       <figure class="eddy-merckx__quote">
-        <blockquote class="eddy-merckx__speech">&laquo;Катайся много или мало, долго или коротко, как хочешь -
-          но&nbsp;катайся&raquo;</blockquote>
+        <h2 class="eddy-merckx__speech">&laquo;Катайся много или мало, долго или коротко, как хочешь -
+          но&nbsp;катайся&raquo;</h2>
         <figcaption class="eddy-merckx__author">
           <p class="eddy-merckx__name">Эдди Меркс</p>
           <p class="eddy-merckx__about">Велогонщик</p>
         </figcaption>
       </figure>
-    </div>
+    </section>
     <section class="covers section" id="covers">
       <h2 class="section__title">Шоссе</h2>
       <p class="section__subtitle">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы
@@ -59,8 +60,8 @@
     <section class="bikes section" id="bikes">
       <h2 class="section__title">Велосипеды</h2>
       <div class="bikes__select-bar">
-        <input class="bikes__option-list  block_screen_mobile" type="text" value="Шоссе" disabled>
-        <button class="bikes__select-image block_screen_mobile"></button>
+        <input class="bikes__option-list block block_screen_mobile" type="text" value="Шоссе" disabled>
+        <button class="bikes__select-image block block_screen_mobile"></button>
         <ul class="bikes__options">
           <li class="bikes__options-item"><button class="bikes__option bikes__option_active">Шоссе</button></li>
           <li class="bikes__options-item"><button class="bikes__option">Грэвел</button></li>
@@ -78,32 +79,32 @@
       <h2 class="section__title">Тренировки</h2>
       <p class="section__subtitle">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать
         эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный план.</p>
-      <img class="section__image" src="./images/trainings.jpg" alt="country-roads-take-me-home">
+      <img class="section__image" src="./images/trainings.jpg" alt="Дорога сквозь пролесок">
       <div class="trainings__apps">
-        <a href="https://www.komoot.com" target="_blank" class="trainings__app">Komoot</a>
         <a href="https://www.strava.com" target="_blank" class="trainings__app">Strava</a>
+        <a href="https://www.komoot.com" target="_blank" class="trainings__app">Komoot</a>
       </div>
     </section>
   </main>
   <footer class="footer">
     <form class="footer__form">
       <label class="footer__label" for="input-email">Подпишитесь на рассылку —</label>
-      <input class="footer__input-email" type="email" id="input-email" placeholder="Ваш e-mail">
+      <input class="footer__input-email" type="email" id="input-email" placeholder="Ваш e-mail" autocomplete="off">
       <button type="submit" class="footer__button">ok</button>
     </form>
     <p class="footer__copyright">&#169; Road Club 2021</p>
-    <div class="switcher block_screen_desktop">
-      <img src="./images/sun.svg" alt="sun-logo" data-js="sun">
+    <div class="switcher block block_screen_desktop">
+      <img src="./images/sun.svg" alt="солнце" data-js="sun">
       <button class="switcher__button switcher__button_mode_light"></button>
-      <img src="./images/moon.svg" alt="moon-logo" data-js="moon">
+      <img src="./images/moon.svg" alt="луна" data-js="moon">
     </div>
-    <img src="./images/logo.svg" class="footer__logo" alt="Logo">
+    <img src="./images/logo.svg" class="footer__logo" alt="Лого">
   </footer>
   <script src="./scripts/covers.js"></script>
   <script src="./scripts/photoSlider.js"></script>
   <script src="./scripts/switcher.js"></script>
-  <script src="./scripts/emailForm.js"></script>
   <script src="./scripts/headerMenu.js"></script>
+  <script src="./scripts/emailForm.js"></script>
 </body>
 
 </html>

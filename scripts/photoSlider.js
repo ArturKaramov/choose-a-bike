@@ -96,7 +96,6 @@ function setNotActive(arr, str) {
 const setActive = (evt, str) => {
   evt.target.classList.add(str);
   bikeSelected.value = evt.target.textContent;
-  console.log(window.screen.width)
   if (window.screen.width <= 500) {showAndHideOptions()}
 };
 
