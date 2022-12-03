@@ -1,10 +1,10 @@
-//const footer = document.querySelector('.footer');
 const buttonSubmit = footer.querySelector('.footer__button');
 const formEmail = footer.querySelector('.footer__input-email');
+const strSubmit = 'Круто!';
 
 function submitEmailForm(evt) {
   evt.preventDefault();
-  formEmail.value = 'Круто!';
+  if (formEmail.value.includes("@") && formEmail.value.includes(".")) {formEmail.value = strSubmit;};
 };
 
 buttonSubmit.addEventListener('click', submitEmailForm);

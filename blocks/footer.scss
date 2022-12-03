@@ -1,13 +1,12 @@
 .footer {
   width: 100%;
-  max-width: 1440px;
   box-sizing: border-box;
   padding: 80px 0 60px 0;
-  padding-left: calc((100% - 1280px) / 2);
-  padding-right: calc((100% - 1280px) / 2);
+  padding-left: calc((100% - 1200px) / 2);
+  padding-right: calc((100% - 1200px) / 2);
   background-color: $color-light-footer;
   display: grid;
-  gap: 100px 0;
+  gap: 80px 0;
   grid-template-columns: minmax(min-content, 360px) min-content;
   grid-template-rows: repeat(2, max-content);
   justify-content: space-between;
@@ -18,8 +17,10 @@
   }
   @include mobile {
     padding: 60px 18px 16px 18px;
+    gap: 90px 0;
     justify-content: space-between;
     align-content: space-between;
+    align-items: center;
     grid-template-areas: "form form"
                         "copyright logo";
   }
@@ -43,6 +44,9 @@
     gap: 50px;
     flex-direction: column;
     position: relative;
+    @include mobile {
+      gap: 40px;
+    }
   }
   &__input-email {
     font-family: $font-inter;
@@ -50,7 +54,6 @@
     line-height: 28px;
     font-weight: 500;
     box-sizing: border-box;
-    max-width: 360px;
     width: 100%;
     height: 50px;
     padding: 11px 20px;
@@ -89,6 +92,7 @@
     line-height: 28px;
     text-align: right;
     color: $color-black;
+    opacity: 0.7;
     background-color: transparent;
     border: none;
     position: absolute;
@@ -98,6 +102,7 @@
     display: none;
     &:hover {
       display: block;
+      opacity: 1;
     }
     &_mode_dark {
       color: $color-white;
@@ -106,6 +111,7 @@
   &__copyright {
     margin: 0;
     padding: 0;
+    align-self: end;
     grid-area: copyright;
     font-family: inherit;
     font-style: normal;
@@ -113,6 +119,9 @@
     font-size: 14px;
     line-height: 20px;
     color: #CFCFCF;
+    @include mobile {
+      align-self: center;
+    }
     &_mode_dark {
       color: #565656;
     }

@@ -375,6 +375,7 @@ template {
 .page {
   box-sizing: border-box;
   max-width: 1440px;
+  margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -396,7 +397,6 @@ template {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
 }
 @media screen and (max-width: 1320px) {
   .content {
@@ -416,6 +416,9 @@ template {
     border: 1px solid #e3e3e3;
     position: absolute;
     top: 40px;
+  }
+  .section:first-child::before {
+    display: none;
   }
 }
 .section__title {
@@ -485,7 +488,7 @@ template {
   padding: 28px 0;
   padding-right: calc(100% - 1320px);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: flex-end;
 }
@@ -566,14 +569,9 @@ template {
 }
 .header__menu_close {
   background-image: url("../images/close.svg");
-  background-color: inherit;
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 22px;
   transform: rotate(45deg);
   grid-area: button;
   justify-self: end;
-  border: none;
 }
 .header__menu_close_mode_dark {
   background-image: url("../images/close-dark.svg");
@@ -582,9 +580,10 @@ template {
 .intro {
   width: 100%;
   max-width: 1320px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  grid-template-rows: repeat(2, min-content) 50px 1fr;
+  grid-template-rows: repeat(2, max-content) 50px 1fr;
   gap: 50px 0;
   justify-content: space-between;
   justify-items: start;
@@ -602,11 +601,21 @@ template {
 }
 @media screen and (max-width: 500px) {
   .intro {
+    padding: 40px 0;
+    margin: 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, min-content);
     gap: 40px;
     align-items: end;
     grid-template-areas: "title" "img" "subtitle" "button";
+  }
+}
+.intro__title {
+  margin-top: 60px;
+}
+@media screen and (max-width: 500px) {
+  .intro__title {
+    margin-top: 0;
   }
 }
 .intro__image {
@@ -626,6 +635,7 @@ template {
 .intro__button {
   grid-area: button;
   width: 180px;
+  box-sizing: border-box;
   height: 50px;
   background-color: #24B47E;
   border-radius: 4px;
@@ -635,6 +645,7 @@ template {
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
+  padding: 16px 0;
   text-align: center;
   letter-spacing: 1px;
   border: none;
@@ -644,14 +655,16 @@ template {
 }
 @media screen and (max-width: 500px) {
   .intro__button {
+    padding: 14px 0 13px 0;
+    font-size: 13px;
+    line-height: 19px;
     width: 100%;
     height: 46px;
   }
 }
 .intro__bike-name {
   margin: 0;
-  padding: 0;
-  padding-bottom: 209px;
+  padding: 0 0 209px 0;
   grid-area: bike;
   font-style: normal;
   font-weight: 400;
@@ -692,9 +705,10 @@ template {
   margin-bottom: 79px;
   box-sizing: border-box;
 }
-@media screen and (max-width: 1106px) {
+@media screen and (max-width: 1260px) {
   .intro__bike-fix {
     width: 30vw;
+    right: 20%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -708,15 +722,17 @@ template {
 
 .eddy-merckx {
   width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
   padding: 120px 0 60px 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(470px, 1fr));
+  grid-template-columns: minmax(1fr, 650px) minmax(1fr, 470px);
   grid-template-rows: 1fr;
   justify-items: center;
   justify-content: space-between;
+  align-content: space-between;
   grid-template-areas: "img quote";
-  align-self: flex-start;
 }
 @media screen and (max-width: 1100px) {
   .eddy-merckx {
@@ -840,7 +856,7 @@ template {
   }
 }
 .covers__photos {
-  margin: 0;
+  margin: 30px 0 0 0;
   padding: 0;
   width: 100%;
   display: flex;
@@ -853,6 +869,11 @@ template {
 .covers__photos::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+@media screen and (max-width: 500px) {
+  .covers__photos {
+    margin: 0;
+  }
 }
 .covers__image {
   max-width: 650px;
@@ -921,9 +942,9 @@ template {
   width: 100%;
   max-width: 1200px;
   align-self: flex-start;
-  padding: 60px 0 0 0;
+  padding: 60px 0;
   display: grid;
-  gap: 140px 0;
+  gap: 120px 0;
   align-items: end;
   grid-template-columns: 1fr min-content;
   grid-template-rows: repeat(2, max-content);
@@ -931,7 +952,7 @@ template {
 }
 @media screen and (max-width: 500px) {
   .bikes {
-    padding-top: 80px;
+    padding: 80px 0 42px 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, max-content);
     gap: 20px;
@@ -975,6 +996,13 @@ template {
   position: absolute;
   top: 33px;
   left: 92px;
+  cursor: pointer;
+}
+.bikes__select-image:hover {
+  opacity: 0.7;
+}
+.bikes__select-image_mode_dark {
+  background-image: url("../images/select-dark.svg");
 }
 .bikes__select-image_active {
   transform: rotate(180deg);
@@ -989,12 +1017,18 @@ template {
   justify-self: end;
   list-style-type: none;
   align-items: flex-start;
+  color: #222;
+  background-color: #f4f4f4;
+}
+.bikes__options_mode_dark {
+  background-color: #333;
+  color: #e5e5e5;
 }
 @media screen and (max-width: 500px) {
   .bikes__options {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 0;
     justify-self: start;
     align-self: start;
     border: 1px solid #E3E3E3;
@@ -1010,9 +1044,7 @@ template {
 }
 @media screen and (max-width: 500px) {
   .bikes__options-item {
-    background-color: rgb(53, 53, 53);
-    color: white;
-    opacity: 0.6;
+    background-color: inherit;
   }
 }
 .bikes__option-list {
@@ -1045,20 +1077,17 @@ template {
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
-  color: #222;
+  color: inherit;
   opacity: 0.7;
   cursor: pointer;
   background-color: transparent;
   box-sizing: border-box;
 }
-.bikes__option_mode_dark {
-  color: #e5e5e5;
-}
 .bikes__option:hover {
   opacity: 0.6;
 }
 .bikes__option_active {
-  color: inherit;
+  color: #151515;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
@@ -1067,14 +1096,18 @@ template {
 .bikes__option_active:hover {
   opacity: 0.75;
 }
-@media screen and (max-width: 500px) {
-  .bikes__option_active {
-    font-size: 11px;
-    line-height: 14px;
-  }
+.bikes__option_mode_dark:hover {
+  opacity: 0.5;
+}
+.bikes__option_active.bikes__option_mode_dark {
+  color: #fff;
+}
+.bikes__option_active.bikes__option_mode_dark:hover {
+  opacity: 0.65;
 }
 @media screen and (max-width: 500px) {
   .bikes__option {
+    padding: 5px 0;
     width: 100%;
     text-align: left;
     padding-left: 12px;
@@ -1082,9 +1115,9 @@ template {
     line-height: 14px;
   }
   .bikes__option:hover {
-    background-color: rgb(53, 53, 53);
-    color: white;
+    background-color: rgb(136, 136, 136);
     opacity: 0.6;
+    color: #fff;
   }
 }
 .bikes__card {
@@ -1097,10 +1130,12 @@ template {
   text-decoration: none;
   color: inherit;
 }
+.bikes__link:hover {
+  opacity: 0.6;
+}
 .bikes__figure {
   padding: 0;
   margin: 0;
-  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -1140,11 +1175,13 @@ template {
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
+  padding-left: 6px;
   color: inherit;
   text-decoration: none;
 }
 @media screen and (max-width: 500px) {
   .bikes__caption {
+    padding: 0;
     font-size: 14px;
     line-height: 18px;
     color: #151515;
@@ -1176,7 +1213,7 @@ template {
 
 .trainings {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   padding: 150px 0 120px 0;
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -1233,14 +1270,13 @@ template {
 
 .footer {
   width: 100%;
-  max-width: 1440px;
   box-sizing: border-box;
   padding: 80px 0 60px 0;
-  padding-left: calc((100% - 1280px) / 2);
-  padding-right: calc((100% - 1280px) / 2);
+  padding-left: calc((100% - 1200px) / 2);
+  padding-right: calc((100% - 1200px) / 2);
   background-color: #efefef;
   display: grid;
-  gap: 100px 0;
+  gap: 80px 0;
   grid-template-columns: minmax(min-content, 360px) min-content;
   grid-template-rows: repeat(2, max-content);
   justify-content: space-between;
@@ -1254,8 +1290,10 @@ template {
 @media screen and (max-width: 500px) {
   .footer {
     padding: 60px 18px 16px 18px;
+    gap: 90px 0;
     justify-content: space-between;
     align-content: space-between;
+    align-items: center;
     grid-template-areas: "form form" "copyright logo";
   }
 }
@@ -1280,13 +1318,17 @@ template {
   flex-direction: column;
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .footer__form {
+    gap: 40px;
+  }
+}
 .footer__input-email {
   font-family: "Inter", Arial, sans-serif;
   font-size: 13px;
   line-height: 28px;
   font-weight: 500;
   box-sizing: border-box;
-  max-width: 360px;
   width: 100%;
   height: 50px;
   padding: 11px 20px;
@@ -1394,6 +1436,7 @@ template {
   line-height: 28px;
   text-align: right;
   color: #151515;
+  opacity: 0.7;
   background-color: transparent;
   border: none;
   position: absolute;
@@ -1404,6 +1447,7 @@ template {
 }
 .footer__button:hover {
   display: block;
+  opacity: 1;
 }
 .footer__button_mode_dark {
   color: #fff;
@@ -1411,6 +1455,7 @@ template {
 .footer__copyright {
   margin: 0;
   padding: 0;
+  align-self: end;
   grid-area: copyright;
   font-family: inherit;
   font-style: normal;
@@ -1418,6 +1463,11 @@ template {
   font-size: 14px;
   line-height: 20px;
   color: #CFCFCF;
+}
+@media screen and (max-width: 500px) {
+  .footer__copyright {
+    align-self: center;
+  }
 }
 .footer__copyright_mode_dark {
   color: #565656;
@@ -1436,7 +1486,11 @@ template {
 
 .switcher {
   grid-area: switcher;
+  width: 140px;
+  height: 40px;
   gap: 22px;
+  padding: 6px 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1457,20 +1511,21 @@ template {
   height: 20px;
   border-radius: 10px;
   position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.6s;
+}
+.switcher__button:hover::after {
+  opacity: 0.8;
 }
 .switcher__button_mode_light {
   background-color: #fff;
-}
-.switcher__button_mode_light::after {
-  top: 2px;
-  left: 2px;
 }
 .switcher__button_mode_dark {
   background-color: #545454;
 }
 .switcher__button_mode_dark::after {
-  top: 2px;
-  right: 2px;
+  transform: translate(20px, 0);
 }
 
 .block_screen_desktop {
