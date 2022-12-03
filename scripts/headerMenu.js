@@ -21,4 +21,11 @@ function closeMenu() {
 
 menuButton.addEventListener('click', openMenu);
 menuCloseButton.addEventListener('click', closeMenu);
-headerLinks.addEventListener('click', closeMenu)
+headerLinks.addEventListener('click', closeMenu);
+
+window.addEventListener('resize', () => {if(window.screen.width > 500) {
+  closeMenu()
+  options.classList.remove('block_screen_mobile');
+  selectButton.classList.remove('bikes__select-image_active');
+}});
+

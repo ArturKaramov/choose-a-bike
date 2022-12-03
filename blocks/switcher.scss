@@ -1,6 +1,10 @@
 .switcher {
   grid-area: switcher;
+  width: 140px;
+  height: 40px;
   gap: 22px;
+  padding: 6px 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,20 +23,21 @@
       height: 20px;
       border-radius: 10px;
       position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: .6s;
+    }
+    &:hover::after {
+      opacity: 0.8;
     }
     &_mode {
       &_light {
         background-color: $color-white;
-        &::after {
-          top: 2px;
-          left: 2px;
-        }
       }
       &_dark {
         background-color: #545454;
         &::after {
-          top: 2px;
-          right: 2px;
+          transform: translate(20px, 0);
         }
       }
     }

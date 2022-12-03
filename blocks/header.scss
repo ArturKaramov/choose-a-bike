@@ -1,18 +1,17 @@
 .header {
   background-color: inherit;
   width: 100%;
+  max-width: 1440px;
   box-sizing: border-box;
   margin: 0;
   padding: 28px 0;
-  padding-right: calc(100% - 1320px);
+  padding-right: 120px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: flex-end;
   @media (max-width: 1320px) {
     padding: 28px 18px;
-    justify-items: flex-end;
-    position: fixed;
   }
   @include mobile {
     padding: 25px 18px 27px 18px;
@@ -77,14 +76,9 @@
     }
     &_close {
       background-image: url("../images/close.svg");
-      background-color: inherit;
-      background-repeat: no-repeat;
-      width: 22px;
-      height: 22px;
       transform: rotate(45deg);
       grid-area: button;
       justify-self: end;
-      border: none;
       &_mode_dark {
         background-image: url("../images/close-dark.svg");
       }

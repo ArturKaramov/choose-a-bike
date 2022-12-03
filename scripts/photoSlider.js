@@ -87,17 +87,14 @@ function addBikeClasses() {
   })
 };
 
-function setNotActive(arr, str) {
+function setNotActive(arr, actClass) {
   arr.forEach(function(n) {
-    n.classList.remove(str);
+    n.classList.remove(actClass);
   })
 };
 
 const setActive = (evt, str) => {
   evt.target.classList.add(str);
-  bikeSelected.value = evt.target.textContent;
-  console.log(window.screen.width)
-  if (window.screen.width <= 500) {showAndHideOptions()}
 };
 
 function showPhotos (arr, str, obj) {
@@ -141,17 +138,22 @@ bikesList.forEach(function(button) {
   button.addEventListener('click', function(evt) {
     setNotActive(bikesList, 'bikes__option_active');
     setActive(evt, 'bikes__option_active');
+    if (window.screen.width <= 500) {
+      showAndHideOptions()
+      bikeSelected.value = evt.target.textContent;
+    }
     hidePhotos(bikesPhotos);
     showPhotos(bikesList, 'bikes__option_active', bikes);
     addBikeClasses();
   })
 });
 
-sliderOptions.forEach(function(option) {
-  option.addEventListener('click', function(evt) {
+sliderOptions.forEach(function(opt) {
+  opt.addEventListener('click', function(evt) {
     setNotActive(sliderOptions, 'clicked_class');
     setActive(evt, 'clicked_class');
-    movePhoto('.bikes__card', sliderOptions, 'clicked_class', bikesPhotos)
+    movePhoto('.bikes__card', sliderOptions, 'clicked_class', bikesPhotos);
+
   })
 });
 
