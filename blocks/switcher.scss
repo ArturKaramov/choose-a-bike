@@ -23,24 +23,21 @@
       height: 20px;
       border-radius: 10px;
       position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: .6s;
     }
     &:hover::after {
       opacity: 0.8;
-      transform: scale(1.05);
     }
     &_mode {
       &_light {
         background-color: $color-white;
-        &::after {
-          top: 2px;
-          left: 2px;
-        }
       }
       &_dark {
         background-color: #545454;
         &::after {
-          top: 2px;
-          right: 2px;
+          transform: translate(20px, 0);
         }
       }
     }
