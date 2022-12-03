@@ -20,8 +20,8 @@ covers = [
 ];
 
 const coversPhotos = document.querySelector('.covers__photos');
-const arrowLeft = document.querySelector('.button_direction_left');
-const arrowRight = document.querySelector('.button_direction_right');
+const arrowLeft = document.querySelector('.button_move_previous');
+const arrowRight = document.querySelector('.button_move_next');
 const blockCovers = document.querySelector('.covers');
 const titleCovers = blockCovers.querySelector('.section__title');
 const subtitleCovers = blockCovers.querySelector('.section__subtitle');
