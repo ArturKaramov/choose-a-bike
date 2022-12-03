@@ -1,6 +1,9 @@
 # Проект "Велосипедный лэндинг"
 Проектный месяц на Яндекс Практикуме Web+. Учебный проект "HARD-01".
 
+# GitHub Pages
+[Bikes Project](https://arturkaramov.github.io/project-month-hard-01/)
+
 # Технологии
 - [HTML](https://ru.wikipedia.org/wiki/HTML)
 - [SCSS](https://ru.wikipedia.org/wiki/SCSS)
