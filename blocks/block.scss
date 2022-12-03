@@ -1,0 +1,24 @@
+.block {
+  &_screen {
+    &_desktop {
+      display: flex;
+      @include mobile {
+        display: none;
+      }
+    }
+    &_mobile {
+      display: none;
+      @include mobile {
+        display: flex;
+      }
+    }
+  }
+  &_display {
+    &_flex {
+      display: flex;
+    }
+    &_none {
+      display: none;
+    }
+  }
+}

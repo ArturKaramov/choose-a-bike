@@ -1,0 +1,41 @@
+.switcher {
+  grid-area: switcher;
+  gap: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__button {
+    width: 44px;
+    height: 24px;
+    border-radius: 22px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      background-color: #24b47e;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      position: absolute;
+    }
+    &_mode {
+      &_light {
+        background-color: $color-white;
+        &::after {
+          top: 2px;
+          left: 2px;
+        }
+      }
+      &_dark {
+        background-color: #545454;
+        &::after {
+          top: 2px;
+          right: 2px;
+        }
+      }
+    }
+  }
+}
+

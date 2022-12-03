@@ -1,0 +1,93 @@
+.header {
+  background-color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 28px 0;
+  padding-right: calc(100% - 1320px);
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 1320px) {
+    padding: 28px 18px;
+    justify-items: flex-end;
+    position: fixed;
+  }
+  @include mobile {
+    padding: 25px 18px 27px 18px;
+    justify-items: flex-end;
+    position: fixed;
+    }
+  &_mobile {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: inherit;
+    padding-bottom: 36px;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr;
+    gap: 100px;
+    grid-template-areas: "button"
+                          "links"
+                        "switcher";
+  }
+  &__links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 34px;
+    @include mobile {
+      display: none;
+      flex-direction: column;
+      gap: 32px;
+      justify-content: flex-start;
+      align-items: center;
+      grid-area: links;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    font-style: normal;
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      opacity: 0.75;
+    }
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+  &__menu {
+    display: none;
+    background-image: url("../images/header-menu.svg");
+    background-color: inherit;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    border: none;
+    &_mode_dark {
+      background-image: url("../images/header-menu-dark.svg");
+    }
+    @include mobile {
+      display: block;
+    }
+    &_close {
+      background-image: url("../images/close.svg");
+      background-color: inherit;
+      background-repeat: no-repeat;
+      width: 22px;
+      height: 22px;
+      transform: rotate(45deg);
+      grid-area: button;
+      justify-self: end;
+      border: none;
+      &_mode_dark {
+        background-image: url("../images/close-dark.svg");
+      }
+    }
+  }
+}
