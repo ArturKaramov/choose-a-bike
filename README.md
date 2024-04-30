@@ -4,8 +4,9 @@
     "Выбрать велосипед"
 </h1>
 
-Ссылка на проект в gh-pages: **[Click](https://arturkaramov.github.io/choose-a-bike/)**
-Ссылка на макет в Figma: **[Click](https://www.figma.com/file/G3UWFlQmNtNs67751YiDH2/Month-of-Landings_external-link?type=design&node-id=0-1&mode=design&t=EDB7TlupteUEEYpG-0)**
+- Ссылка на проект в gh-pages: **[Click](https://arturkaramov.github.io/choose-a-bike/)**
+
+- Ссылка на макет в Figma: **[Click](https://www.figma.com/file/G3UWFlQmNtNs67751YiDH2/Month-of-Landings_external-link?type=design&node-id=0-1&mode=design&t=EDB7TlupteUEEYpG-0)**
 
 ## 📖 О проекте
 
